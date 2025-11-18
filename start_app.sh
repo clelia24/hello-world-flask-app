@@ -1,15 +1,17 @@
 #!/bin/bash
 set -e
 
+
 # Navigate to app directory
+
 cd "$(dirname "$0")"
 
 # Kill any existing instance
-pkill -f 'python app.py' || true
+pkill -f 'python3 app.py' || true
 sleep 1
 
 # Start the app in background
-nohup python app.py > app.log 2>&1 &
+nohup python3 app.py > app.log 2>&1 &
 PID=$!
 
 # Save PID
